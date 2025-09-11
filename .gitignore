@@ -1,0 +1,9 @@
+# Always ignore node_modules
+/frontEnd/node_modules
+
+# Ignore GitHub Pages build artifacts in main
+/docs
+/frontEnd/dist
+/index.html
+/vite.svg
+/assets
