@@ -1,10 +1,10 @@
-import './App.css'
+import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import Register from './pages/auth/Register';
+import Register from "./pages/auth/Register";
 
 //loading ani
-import Loader from "./components/Loader"
+import Loader from "./components/Loader";
 
 //common pages
 const Landing = lazy(() => import("./pages/common/Landing"));
@@ -23,7 +23,9 @@ const SubmitComplaint = lazy(() => import("./pages/citizen/SubmitComplaint"));
 const TrackComplaint = lazy(() => import("./pages/citizen/TrackComplaint"));
 
 //staff pages
-const AssignedComplaints = lazy(() => import("./pages/staff/AssignedComplaints"));
+const AssignedComplaints = lazy(() =>
+  import("./pages/staff/AssignedComplaints")
+);
 const StaffDashboard = lazy(() => import("./pages/staff/StaffDashboard"));
 const UpdateComplaints = lazy(() => import("./pages/staff/UpdateComplaints"));
 
@@ -36,13 +38,13 @@ const MonitorUpdates = lazy(() => import("./pages/admin/MonitorUpdates"));
 
 
 function App() {
-
   return (
     <Router>
       <Suspense fallback={<Loader />}>
+        
         <Routes>
-
           {/* Common */}
+
           <Route path="/" element={<Landing />} />
           <Route path="/logout" element={<Logout />} />
 
@@ -72,12 +74,10 @@ function App() {
             <Route path="analytics" element={<Analytics />} />
             <Route path="monitor" element={<MonitorUpdates />} />
           </Route>
-
         </Routes>
       </Suspense>
     </Router>
-  )
-
+  );
 }
 
-export default App
+export default App;
