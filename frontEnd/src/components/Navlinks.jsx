@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 
-
 const linkElements = [
   { name: "Home", path: "/", class: "active" },
   { name: "Features", path: "/features", class: "" },

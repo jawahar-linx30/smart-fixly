@@ -36,12 +36,13 @@ const Analytics = lazy(() => import("./pages/admin/Analytics"));
 const AssignComplaints = lazy(() => import("./pages/admin/AssignComplaints"));
 const MonitorUpdates = lazy(() => import("./pages/admin/MonitorUpdates"));
 
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.PROD ? "/smart-fixly" : "/"} >
       <Suspense fallback={<Loader />}>
-        
+         <Navbar />
         <Routes>
           {/* Common */}
 

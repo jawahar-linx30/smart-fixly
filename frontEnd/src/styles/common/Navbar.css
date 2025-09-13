@@ -1,0 +1,92 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background: #fffffe;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navLinks li {
+  list-style-type: none;
+  margin-left: 10px;
+}
+a {
+  text-decoration: none;
+  color: #222;
+}
+.logo-link {
+  display: flex; /* Aligns SVG and text inside the link */
+  align-items: center;
+  gap: 0px; /* Space between logo SVG and text */
+  text-decoration: none;
+  color: #1c1e21;
+  font-weight: 600;
+  font-size: 20px;
+  transition: opacity 0.1s;
+}
+
+.logo-link:hover {
+  opacity: 0.8;
+}
+
+.logo-svg {
+  width: 55px;
+  height: 64px;
+}
+
+.navLinks a {
+  /* Structure and Layout */
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  position: relative;
+  vertical-align: middle;
+
+  /* Appearance */
+  background-color: transparent; /* Links are transparent by default */
+  border: 1px solid transparent; /* Keeps layout consistent on hover */
+  border-radius: 6px;
+  color: #24292e;
+  text-decoration: none; /* Removes underline */
+
+  /* Typography */
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+
+  /* Behavior */
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1),
+    border-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+}
+
+/* Hover state: subtle background appears */
+.navLinks a:hover {
+  background-color: #f3f4f6;
+  transition-duration: 0.1s;
+}
+
+/* Active state: when the link is being clicked */
+.navLinks a:active {
+  background-color: #edeff2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+/* Style for the currently active page link */
+.navLinks a.active {
+  background-color: #fafbfc;
+  border-color: rgba(27, 31, 35, 0.15);
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  color: #24292e;
+  font-weight: 600; /* Makes the active link bolder */
+}
