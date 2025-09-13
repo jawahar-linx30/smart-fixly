@@ -38,7 +38,7 @@ const MonitorUpdates = lazy(() => import("./pages/admin/MonitorUpdates"));
 function App() {
 
   return (
-    <Router>
+    <Router basename={import.meta.env.PROD ? "/smart-fixly" : "/"} >
       <Suspense fallback={<Loader />}>
         <Routes>
 
