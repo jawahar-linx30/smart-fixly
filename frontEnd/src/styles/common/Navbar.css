@@ -1,27 +1,21 @@
+
+
+/* Navbar container */
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background: #fffffe;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1000;
 }
 
-.navLinks {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.navLinks li {
-  list-style-type: none;
-  margin-left: 10px;
-}
-a {
-  text-decoration: none;
-  color: #222;
-}
+/* Logo */
 .logo-link {
-  display: flex; /* Aligns SVG and text inside the link */
+  display: flex;
   align-items: center;
-  gap: 0px; /* Space between logo SVG and text */
+  gap: 5px;
   text-decoration: none;
   color: #1c1e21;
   font-weight: 600;
@@ -34,59 +28,110 @@ a {
 }
 
 .logo-svg {
-  width: 55px;
-  height: 64px;
+  width: 40px;
+  height: 48px;
 }
 
-.navLinks a {
-  /* Structure and Layout */
+/* Links (desktop) */
+.navLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navLinks li {
+  list-style-type: none;
+  margin-left: 10px;
+}
+
+.navLinks button {
   display: inline-block;
-  box-sizing: border-box;
   padding: 8px 16px;
-  position: relative;
-  vertical-align: middle;
-
-  /* Appearance */
-  background-color: transparent; /* Links are transparent by default */
-  border: 1px solid transparent; /* Keeps layout consistent on hover */
   border-radius: 6px;
-  color: #24292e;
-  text-decoration: none; /* Removes underline */
-
-  /* Typography */
+  /* color: #060606; */
   font-size: 14px;
   font-weight: 500;
-  line-height: 20px;
-  white-space: nowrap;
-
-  /* Behavior */
+  text-decoration: none;
+  transition: background-color 0.2s ease;
   cursor: pointer;
-  touch-action: manipulation;
-  user-select: none;
-  -webkit-user-select: none;
-  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1),
-    border-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
 }
 
-/* Hover state: subtle background appears */
-.navLinks a:hover {
+.navLinks button:hover {
   background-color: #f3f4f6;
-  transition-duration: 0.1s;
 }
 
-/* Active state: when the link is being clicked */
-.navLinks a:active {
-  background-color: #edeff2;
-  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
-  transition: none 0s;
-}
-
-/* Style for the currently active page link */
-.navLinks a.active {
+.navLinks button.active {
   background-color: #fafbfc;
-  border-color: rgba(27, 31, 35, 0.15);
-  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
-    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
-  color: #24292e;
-  font-weight: 600; /* Makes the active link bolder */
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  font-weight: 600;
 }
+
+/* Hamburger / Close button */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100; /* Keep it above the menu */
+}
+
+/* ✅ Responsive Styles */
+@media (max-width: 768px) {
+  .navLinks {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    background: #fffffe;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .navLinks.show {
+    right: 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+/* Login button */
+.login-btn {
+  background-color: white;   /* White background */
+  color: #060606;            /* Black text */
+  border: 1px solid #060606; /* Black border */
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 8px 16px;
+}
+
+.login-btn:hover {
+  background-color: #060606;              /* White text on hover */
+}
+
+/* Register button */
+.register-btn {
+  background-color: #060606; /* Black background */
+  color: white;               /* White text */
+  border: 1px solid #060606; /* Black border */
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 8px 16px;
+}
+.register-btn.active{
+  color:#060606;
+}
+.register-btn:hover {
+  background-color: white;    /* White on hover */
+  color: #060606;             /* Black text on hover */
+  border: 1px solid #060606;  /* Keep border black */
+}
+

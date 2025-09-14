@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import Register from "./pages/auth/Register";
+// import Register from "./pages/auth/Register";
 
 //loading ani
 import Loader from "./components/Loader";
@@ -12,7 +12,8 @@ const Logout = lazy(() => import("./pages/common/Logout"));
 
 //auth pages
 const Login = lazy(() => import("./pages/auth/Login"));
-const Resgister = lazy(() => import("./pages/auth/Register"));
+const Register = lazy(() => import("./pages/auth/Register"));
+const Staff_Login = lazy(() => import("./pages/auth/Staff_Login"));
 
 //citizen pages
 const CitizenDashboard = lazy(() => import("./pages/citizen/CitizenDashboard"));
@@ -37,6 +38,7 @@ const AssignComplaints = lazy(() => import("./pages/admin/AssignComplaints"));
 const MonitorUpdates = lazy(() => import("./pages/admin/MonitorUpdates"));
 
 import Navbar from "./components/Navbar";
+import Footer from "./pages/common/Footer";
 
 function App() {
   return (
@@ -52,6 +54,7 @@ function App() {
           {/* Auth */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/staff_login" element={<Staff_Login />} />
 
           {/* Citizen */}
           <Route path="/citizen" element={<CitizenDashboard />}>
@@ -76,6 +79,7 @@ function App() {
             <Route path="monitor" element={<MonitorUpdates />} />
           </Route>
         </Routes>
+        <Footer />
       </Suspense>
     </Router>
   );
