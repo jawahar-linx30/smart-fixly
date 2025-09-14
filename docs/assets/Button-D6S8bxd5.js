@@ -1,0 +1,1 @@
+import{u as s,j as a}from"./index-Dw301RX4.js";function i({label:n,to:o,className:t}){const u=s();return a.jsx("button",{className:`custom-button ${t||""}`,onClick:()=>u(o),children:n})}export{i as default};
