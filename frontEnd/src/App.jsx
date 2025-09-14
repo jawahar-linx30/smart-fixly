@@ -1,10 +1,10 @@
-import './App.css'
+import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import Register from './pages/auth/Register';
+// import Register from "./pages/auth/Register";
 
 //loading ani
-import Loader from "./components/Loader"
+import Loader from "./components/Loader";
 
 //common pages
 const Landing = lazy(() => import("./pages/common/Landing"));
@@ -12,7 +12,8 @@ const Logout = lazy(() => import("./pages/common/Logout"));
 
 //auth pages
 const Login = lazy(() => import("./pages/auth/Login"));
-const Resgister = lazy(() => import("./pages/auth/Register"));
+const Register = lazy(() => import("./pages/auth/Register"));
+const Staff_Login = lazy(() => import("./pages/auth/Staff_Login"));
 
 //citizen pages
 const CitizenDashboard = lazy(() => import("./pages/citizen/CitizenDashboard"));
@@ -23,7 +24,9 @@ const SubmitComplaint = lazy(() => import("./pages/citizen/SubmitComplaint"));
 const TrackComplaint = lazy(() => import("./pages/citizen/TrackComplaint"));
 
 //staff pages
-const AssignedComplaints = lazy(() => import("./pages/staff/AssignedComplaints"));
+const AssignedComplaints = lazy(() =>
+  import("./pages/staff/AssignedComplaints")
+);
 const StaffDashboard = lazy(() => import("./pages/staff/StaffDashboard"));
 const UpdateComplaints = lazy(() => import("./pages/staff/UpdateComplaints"));
 
@@ -34,21 +37,24 @@ const Analytics = lazy(() => import("./pages/admin/Analytics"));
 const AssignComplaints = lazy(() => import("./pages/admin/AssignComplaints"));
 const MonitorUpdates = lazy(() => import("./pages/admin/MonitorUpdates"));
 
+import Navbar from "./components/Navbar";
+import Footer from "./pages/common/Footer";
 
 function App() {
-
   return (
     <Router basename={import.meta.env.PROD ? "/smart-fixly" : "/"} >
       <Suspense fallback={<Loader />}>
+         <Navbar />
         <Routes>
-
           {/* Common */}
+
           <Route path="/" element={<Landing />} />
           <Route path="/logout" element={<Logout />} />
 
           {/* Auth */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/staff_login" element={<Staff_Login />} />
 
           {/* Citizen */}
           <Route path="/citizen" element={<CitizenDashboard />}>
@@ -72,12 +78,11 @@ function App() {
             <Route path="analytics" element={<Analytics />} />
             <Route path="monitor" element={<MonitorUpdates />} />
           </Route>
-
         </Routes>
+        <Footer />
       </Suspense>
     </Router>
-  )
-
+  );
 }
 
-export default App
+export default App;
