@@ -1,0 +1,154 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fffffe;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: #1c1e21;
+  font-weight: 600;
+  font-size: 20px;
+  transition: opacity 0.1s;
+}
+
+.nav-link:hover {
+  background: none !important;
+  border: none !important;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.logo-link:hover {
+  opacity: 0.8;
+}
+
+.logo-svg {
+  width: 40px;
+  height: 48px;
+}
+
+/* Links (desktop) */
+.navLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navLinks li {
+  list-style-type: none;
+  margin-left: 10px;
+}
+
+.navLinks button {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  /* color: #060606; */
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.navLinks button:hover {
+  background-color: #f3f4f6;
+}
+
+.navLinks button.active {
+  background-color: #fafbfc;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  font-weight: 600;
+}
+
+/* Hamburger / Close button */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+  /* Keep it above the menu */
+}
+
+/* ✅ Responsive Styles */
+@media (max-width: 768px) {
+  .navLinks {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    background: #fffffe;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .navLinks.show {
+    right: 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+/* Login button */
+.login-btn {
+  background-color: white;
+  /* White background */
+  color: #060606;
+  /* Black text */
+  border: 1px solid #060606;
+  /* Black border */
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 8px 16px;
+}
+
+.login-btn:hover {
+  background-color: #060606;
+  /* White text on hover */
+}
+
+/* Register button */
+.register-btn {
+  background-color: #060606;
+  /* Black background */
+  color: white;
+  /* White text */
+  border: 1px solid #060606;
+  /* Black border */
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 8px 16px;
+}
+
+.register-btn.active {
+  color: #060606;
+}
+
+.register-btn:hover {
+  background-color: white;
+  /* White on hover */
+  color: #060606;
+  /* Black text on hover */
+  border: 1px solid #060606;
+  /* Keep border black */
+}

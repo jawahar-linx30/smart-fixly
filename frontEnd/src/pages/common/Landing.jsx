@@ -1,5 +1,7 @@
 import React from "react";
-import "../../styles/common/Landing.css";
+import "../../styles/pages/common/Landing.css";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 import { lazy, Suspense } from "react";
 
@@ -9,6 +11,7 @@ const Button = lazy(() => import("../../components/Button"));
 export default function Landing() {
   return (
     <>
+    <Navbar />
     <div className="hero-container" id="home">
      
       <div className="hero-content">
@@ -19,7 +22,7 @@ export default function Landing() {
           Together, we build cleaner, safer, and smarter cities.
         </p>
       </div>
-      <Button label="Get Started" to="/login" className="btn primary-btn " />
+      <Button label="Get Started" to="/register" className="btn primary-btn " />
 
     </div>
     <div className="features-section" id="features-section">
@@ -36,12 +39,12 @@ export default function Landing() {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke="currentColor"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z"
               />
             </svg>
@@ -59,12 +62,12 @@ export default function Landing() {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke="currentColor"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.624l.21-1.032a3.375 3.375 0 00-2.456-2.456l-1.032-.21-.21 1.032a3.375 3.375 0 002.456 2.456l1.032.21z"
               />
             </svg>
@@ -82,26 +85,26 @@ export default function Landing() {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke="currentColor"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
               />
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
               />
             </svg>
           </div>
-          <h3>Real-Time Transparent Tracking</h3>
+          <h3>Real-Time Tracking</h3>
           <p>
             Follow your complaint's journey from "Registered" to "In Progress"
             to "Resolved." Access final reports and provide feedback to help
-            create accountability and improve city services.
+            create accountability and improve services.
           </p>
         </div>
       </div>
@@ -125,9 +128,9 @@ export default function Landing() {
             <path
               d="M 10 80 Q 50 20, 100 80 T 190 80"
               stroke="#0c66e4"
-              stroke-width="4"
+              strokeWidth="4"
               fill="none"
-              stroke-dasharray="8 4"
+              strokeDasharray="8 4"
             />
             <g fill="#4a5568">
               <circle cx="20" cy="110" r="8" />
@@ -141,8 +144,8 @@ export default function Landing() {
             <text
               x="5"
               y="145"
-              font-family="sans-serif"
-              font-size="10"
+              fontFamily="sans-serif"
+              fontSize="10"
               fill="#24292e"
             >
               Citizens
@@ -150,8 +153,8 @@ export default function Landing() {
             <text
               x="150"
               y="145"
-              font-family="sans-serif"
-              font-size="10"
+              fontFamily="sans-serif"
+              fontSize="10"
               fill="#24292e"
             >
               Authorities
@@ -169,12 +172,12 @@ export default function Landing() {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
@@ -191,12 +194,12 @@ export default function Landing() {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
                 />
               </svg>
@@ -213,12 +216,12 @@ export default function Landing() {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M13.5 10.5V6.75a4.5 4.5 0 00-9 0v3.75M3.75 10.5h16.5v11.25h-16.5V10.5z"
                 />
               </svg>
@@ -232,7 +235,7 @@ export default function Landing() {
         </div>
       </div>
     </div>
-
+    <Footer />
     </>
   );
 }

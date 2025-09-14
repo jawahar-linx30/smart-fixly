@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import "../styles/common/Navbar.css";
+import "../styles/components/Navbar.css";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +34,7 @@ function Navbar() {
           onClick={() => handleClick("/")}
           style={{ cursor: "pointer" }}
         >
-          <img src="/logo.svg" alt="SmartFixly Logo" className="logo-svg" />
+          <img src="logo.svg" alt="SmartFixly Logo" className="logo-svg" />
           <span>SmartFixly</span>
         </button>
       </h1>
@@ -52,7 +52,7 @@ function Navbar() {
       <ul className={`navLinks ${isOpen ? "show" : ""}`}>
         <li>
           <button
-            className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
+            className= "nav-link"
             onClick={() => handleClick("home")}
           >
             Home
